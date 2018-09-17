@@ -6,6 +6,7 @@ SELECT
 , "s"."time" "starttime"
 , "f"."time" "finishtime"
 , "date_diff"('second', "from_iso8601_timestamp"("s"."time"), "from_iso8601_timestamp"("f"."time")) "total_in_seconds"
+, f.logStreamName
 , "f"."status" "completionstatus"
 , "s"."yyyy"
 , "s"."dd"

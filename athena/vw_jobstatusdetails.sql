@@ -5,6 +5,7 @@ SELECT
 , "detail"."status"
 , "detail"."jobdefinition"
 , cardinality("detail"."attempts") attempts
+, detail.container.logStreamName logStreamName
 , "partition_0" "yyyy"
 , "partition_1" "mm"
 , "partition_2" "dd"
