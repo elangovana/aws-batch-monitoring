@@ -4,7 +4,7 @@ SELECT
 , "time"
 , "detail"."status"
 , "detail"."jobdefinition"
-, "detail"."retrystrategy"."attempts"
+, cardinality("detail"."attempts") attempts
 , "partition_0" "yyyy"
 , "partition_1" "mm"
 , "partition_2" "dd"

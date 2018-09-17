@@ -1,7 +1,7 @@
 CREATE OR REPLACE VIEW jobexecutiontimes AS
 SELECT
   "s"."jobid"
-, "s"."attempts"
+, "f"."attempts"
 , "s"."jobdefinition"
 , "s"."time" "starttime"
 , "f"."time" "finishtime"
@@ -13,5 +13,5 @@ SELECT
 , "s"."hh"
 FROM
   (jobstatusdetails s
-INNER JOIN jobstatusdetails f ON (("s"."jobid" = "f"."jobid") AND ("s"."attempts" = "f"."attempts")))
+INNER JOIN jobstatusdetails f ON (("s"."jobid" = "f"."jobid") ))
 WHERE (("s"."status" = 'RUNNABLE') AND ("f"."status" IN ('FAILED', 'SUCCEEDED')))
