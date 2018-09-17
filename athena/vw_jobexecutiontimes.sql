@@ -14,4 +14,4 @@ SELECT
 FROM
   (jobstatusdetails s
 INNER JOIN jobstatusdetails f ON (("s"."jobid" = "f"."jobid") AND ("s"."attempts" = "f"."attempts")))
-WHERE (("s"."status" = 'STARTING') AND ("f"."status" IN ('FAILED', 'SUCCEEDED')))
+WHERE (("s"."status" = 'RUNNABLE') AND ("f"."status" IN ('FAILED', 'SUCCEEDED')))
